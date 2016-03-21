@@ -24,12 +24,27 @@ class DataModel: NSObject {
         loadSessions()
     }
     
+    // MARK: - ManageSessions
+    
+    func currentSession() -> Session {
+        return sessions[sessions.count - 1]
+    }
+    
+    func newSession() {
+        let newSession = Session()
+        sessions.append(newSession)
+    }
+    
+    func deleteSession(index: Int) {
+        sessions.removeAtIndex(index)
+    }
+    
     // MARK: - DataModel Saving & Loading
     
     func documentsDirectory() -> String {
         let paths = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
         
-        print(paths[0])
+//        print(paths[0])
         return paths[0]
     }
     
@@ -48,6 +63,7 @@ class DataModel: NSObject {
         data.writeToFile(dataFilePath(), atomically: true)
         
         print("saved")
+        print("Saving: \(sessions.count)")
     }
     
     func loadSessions() {

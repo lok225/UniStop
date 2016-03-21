@@ -7,22 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E3128C221C637B9B0038DB98 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3128C211C637B9B0038DB98 /* Session.swift */; };
 		E31F5E241C64A00600982E8A /* Lap.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31F5E231C64A00600982E8A /* Lap.swift */; };
 		E31F5E261C64A38000982E8A /* Split.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31F5E251C64A38000982E8A /* Split.swift */; };
+		E394AE841C99D80000062231 /* Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E394AE831C99D80000062231 /* Driver.swift */; };
+		E394AE861C9A1F0000062231 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = E394AE851C9A1F0000062231 /* Session.swift */; };
+		E394AE881C9AA70E00062231 /* Helper Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E394AE871C9AA70E00062231 /* Helper Functions.swift */; };
 		E3BEEBD61C633BB800076E8C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BEEBD51C633BB800076E8C /* AppDelegate.swift */; };
 		E3BEEBDB1C633BB800076E8C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3BEEBD91C633BB800076E8C /* Main.storyboard */; };
 		E3BEEBDD1C633BB800076E8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3BEEBDC1C633BB800076E8C /* Assets.xcassets */; };
 		E3BEEBE01C633BB800076E8C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3BEEBDE1C633BB800076E8C /* LaunchScreen.storyboard */; };
 		E3BEEBE81C633CC300076E8C /* StopWatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BEEBE71C633CC300076E8C /* StopWatchViewController.swift */; };
 		E3BEEBEA1C633E8C00076E8C /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BEEBE91C633E8C00076E8C /* DataModel.swift */; };
-		E3BEEBEC1C633EA000076E8C /* Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BEEBEB1C633EA000076E8C /* Driver.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		E3128C211C637B9B0038DB98 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		E31F5E231C64A00600982E8A /* Lap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lap.swift; sourceTree = "<group>"; };
 		E31F5E251C64A38000982E8A /* Split.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Split.swift; sourceTree = "<group>"; };
+		E394AE831C99D80000062231 /* Driver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Driver.swift; sourceTree = "<group>"; };
+		E394AE851C9A1F0000062231 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		E394AE871C9AA70E00062231 /* Helper Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Helper Functions.swift"; sourceTree = "<group>"; };
 		E3BEEBD21C633BB800076E8C /* UniStop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UniStop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3BEEBD51C633BB800076E8C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E3BEEBDA1C633BB800076E8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -31,7 +34,6 @@
 		E3BEEBE11C633BB800076E8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3BEEBE71C633CC300076E8C /* StopWatchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopWatchViewController.swift; sourceTree = "<group>"; };
 		E3BEEBE91C633E8C00076E8C /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
-		E3BEEBEB1C633EA000076E8C /* Driver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Driver.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,10 +70,11 @@
 				E3BEEBE71C633CC300076E8C /* StopWatchViewController.swift */,
 				E3BEEBD91C633BB800076E8C /* Main.storyboard */,
 				E3BEEBE91C633E8C00076E8C /* DataModel.swift */,
-				E3128C211C637B9B0038DB98 /* Session.swift */,
-				E3BEEBEB1C633EA000076E8C /* Driver.swift */,
+				E394AE851C9A1F0000062231 /* Session.swift */,
+				E394AE831C99D80000062231 /* Driver.swift */,
 				E31F5E231C64A00600982E8A /* Lap.swift */,
 				E31F5E251C64A38000982E8A /* Split.swift */,
+				E394AE871C9AA70E00062231 /* Helper Functions.swift */,
 				E3BEEBDC1C633BB800076E8C /* Assets.xcassets */,
 				E3BEEBDE1C633BB800076E8C /* LaunchScreen.storyboard */,
 				E3BEEBE11C633BB800076E8C /* Info.plist */,
@@ -151,13 +154,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E394AE861C9A1F0000062231 /* Session.swift in Sources */,
 				E31F5E261C64A38000982E8A /* Split.swift in Sources */,
-				E3128C221C637B9B0038DB98 /* Session.swift in Sources */,
+				E394AE881C9AA70E00062231 /* Helper Functions.swift in Sources */,
+				E394AE841C99D80000062231 /* Driver.swift in Sources */,
 				E3BEEBE81C633CC300076E8C /* StopWatchViewController.swift in Sources */,
 				E3BEEBD61C633BB800076E8C /* AppDelegate.swift in Sources */,
 				E31F5E241C64A00600982E8A /* Lap.swift in Sources */,
 				E3BEEBEA1C633E8C00076E8C /* DataModel.swift in Sources */,
-				E3BEEBEC1C633EA000076E8C /* Driver.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,6 +275,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = UniStop/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.martinlok.UniStopApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -285,6 +290,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = UniStop/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.martinlok.UniStopApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";

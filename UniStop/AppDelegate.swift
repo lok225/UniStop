@@ -19,8 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         let controller = window?.rootViewController as! StopWatchViewController
-        
         controller.dataModel = self.dataModel
+        
+        if dataModel.sessions.count == 0 {
+            dataModel.newSession()
+        }
         
         return true
     }
@@ -33,6 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidEnterBackground(application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        dataModel.saveSessions()
     }
 
     func applicationWillEnterForeground(application: UIApplication) {

@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 class Session: NSObject, NSCoding {
 
     // MARK: - Variabler og Konstanter
@@ -16,11 +15,13 @@ class Session: NSObject, NSCoding {
     let kDriversKey = "Drivers"
     let kStartTimeKey = "SessionStartTime"
     let kEndTimeKey = "SessionEndTime"
+    let kNameKey = "Name"
     
     let startTime: NSDate!
     var endTime: NSDate?
-    var drivers = [Driver]()
-    var numberOfDrivers: Int {
+    
+    var drivers = [Int: Driver]()
+	var numberOfDrivers: Int {
         get {
             return self.drivers.count
         }
@@ -35,7 +36,7 @@ class Session: NSObject, NSCoding {
     }
     
     required init?(coder aDecoder: NSCoder) {
-        drivers = aDecoder.decodeObjectForKey(kDriversKey) as! [Driver]
+        drivers = aDecoder.decodeObjectForKey(kDriversKey) as! [Int: Driver]
         startTime = aDecoder.decodeObjectForKey(kStartTimeKey) as? NSDate
         endTime = aDecoder.decodeObjectForKey(kEndTimeKey) as? NSDate
         super.init()
@@ -51,8 +52,41 @@ class Session: NSObject, NSCoding {
     
     // MARK: - Functions
     
+    
     func setEndTime() {
         endTime = NSDate()
     }
     
+    func stopAllDrivers() {
+        let driver1 = drivers[1]
+        let driver2 = drivers[2]
+        let driver3 = drivers[3]
+        let driver4 = drivers[4]
+        
+        driver1?.stopTimer()
+        driver2?.stopTimer()
+        driver3?.stopTimer()
+        driver4?.stopTimer()
+    }
+    
+    // MARK: - Time Functions
+    
+
+    
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
