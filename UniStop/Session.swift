@@ -63,10 +63,10 @@ class Session: NSObject, NSCoding {
         let driver3 = drivers[3]
         let driver4 = drivers[4]
         
-        driver1?.stopTimer()
-        driver2?.stopTimer()
-        driver3?.stopTimer()
-        driver4?.stopTimer()
+        driver1?.resetTimer()
+        driver2?.resetTimer()
+        driver3?.resetTimer()
+        driver4?.resetTimer()
     }
     
     // MARK: - Time Functions

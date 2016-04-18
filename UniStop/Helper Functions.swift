@@ -10,16 +10,21 @@ import Foundation
 
 
 
-func stringFromTimeInterval(interval:NSTimeInterval) -> NSString {
+func stringFromTimeInterval(interval:NSTimeInterval?) -> NSString? {
     
-    let ti = NSInteger(interval)
-    
-    let ms = Int((interval % 1) * 1000)
-    let seconds = ti % 60
-    let minutes = (ti / 60) % 60
-    // let hours = (ti / 3600)
-    
-    return NSString(format: "%0.2d:%0.2d.%0.3d",minutes,seconds,ms)
+    if let _ = interval {
+        let ti = NSInteger(interval!)
+
+        let ms = Int((interval! % 1) * 100)
+        let seconds = ti % 60
+        let minutes = (ti / 60) % 60
+        // let hours = (ti / 3600)
+        
+        return NSString(format: "%0.2d:%0.2d.%0.2d",minutes,seconds,ms)
+    } else {
+        return nil
+    }
+
 }
 
 func getStringFromDate(date: NSDate, withTime: Bool, withDate: Bool) -> String {

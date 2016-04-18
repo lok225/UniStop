@@ -21,28 +21,42 @@ class Driver: NSObject, NSCoding {
     let kEndDateKey = "DriverEndDate"
     
     var laps = [Lap]()
-    var bestLap: Lap?
+    
+    // Test om det virker senere. Er ikke sikker
+    var bestLap: Lap? {
+        get {
+            if let bestLap = getBestLap() {
+                return bestLap
+            } else {
+                return nil
+            }
+        }
+    }
+    
     var totalLaps: Int {
         get {
             return laps.count
         }
     }
     
-    let startDate: NSDate!
+    var startDate: NSDate!
     var endDate: NSDate?
     
     var delegate: DriverDelegate?
     
     var timer: NSTimer = NSTimer()
+    var timeDifference: NSTimeInterval = 0.0
+    var timeDifferenceInt: Int = 0
 
     // MARK: - Initializers
     
     override init() {
-        bestLap = nil
         startDate = NSDate()
         endDate = nil
         super.init()
-        laps.append(Lap())
+        if laps.isEmpty {
+            addLap(Lap())
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -67,19 +81,17 @@ class Driver: NSObject, NSCoding {
     
 
 	func fireTimer() {
-        timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: Selector("updateAtFireTime"), userInfo: nil, repeats: true)
+        timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: #selector(Driver.updateAtFireTime), userInfo: nil, repeats: true)
 	}
 	
 	func updateAtFireTime() {
         let currentDate = getCurrentDate()
-		let timeDifference: NSTimeInterval = currentDate.timeIntervalSinceDate(startDate)
-//        print(timeDifference)
+        timeDifference = currentDate.timeIntervalSinceDate(startDate)
         
-        let timeDifferenceInt = Int(timeDifference * 100)
-        laps.last?.lapTime = timeDifference
+        timeDifferenceInt = Int(timeDifference * 100)
+        laps.last!.lapTime = timeDifference
 
-        if timeDifferenceInt % 3 == 0 {
-//            print("Called")
+        if timeDifferenceInt % 5 == 0 {
             delegate?.driverShouldUpdateView(timeDifference)
         }
         
@@ -89,15 +101,33 @@ class Driver: NSObject, NSCoding {
         }
 	}
     
-    func stopTimer() {
-        timer.invalidate()
-        print("Stopped")
+    func resetTimer() {
+        startDate = NSDate()
+        timeDifference = 0.0
     }
+    
+    // MARK: - Lap Functions
+    
+    func getBestLap() -> Lap? {
+        
+        let sortedLapTimes: [Lap]? = laps.sort({$0.lapTime < $1.lapTime})
+        
+        if let _ = sortedLapTimes {
+            return sortedLapTimes!.first! as Lap!
+        } else {
+            return nil
+        }
+    }
+    
+    func addLap(lap: Lap) {
+        laps.append(lap)
+    }
+    
+    // MARK: - Helper Functions
     
     func getCurrentDate() -> NSDate {
-    	return NSDate()
+        return NSDate()
     }
-    
 }
 
 

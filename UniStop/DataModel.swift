@@ -27,7 +27,7 @@ class DataModel: NSObject {
     // MARK: - ManageSessions
     
     func currentSession() -> Session {
-        return sessions[sessions.count - 1]
+        return sessions.last!
     }
     
     func newSession() {
@@ -44,7 +44,6 @@ class DataModel: NSObject {
     func documentsDirectory() -> String {
         let paths = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
         
-//        print(paths[0])
         return paths[0]
     }
     
